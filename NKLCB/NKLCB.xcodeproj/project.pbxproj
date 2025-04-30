@@ -6,20 +6,56 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		7B5F87A32DC1EF83004BFDC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B5F87662DC1C8A4004BFDC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B5F876D2DC1C8A4004BFDC7;
+			remoteInfo = NKLCB;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		7B5F876E2DC1C8A4004BFDC7 /* NKLCB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NKLCB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B5F879F2DC1EF83004BFDC7 /* NKLCBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NKLCBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		7B5F87952DC1E9D8004BFDC7 /* Exceptions for "NKLCB" folder in "NKLCB" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Info.plist,
+			);
+			target = 7B5F876D2DC1C8A4004BFDC7 /* NKLCB */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		7B5F87702DC1C8A4004BFDC7 /* NKLCB */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				7B5F87952DC1E9D8004BFDC7 /* Exceptions for "NKLCB" folder in "NKLCB" target */,
+			);
 			path = NKLCB;
+			sourceTree = "<group>";
+		};
+		7B5F87A02DC1EF83004BFDC7 /* NKLCBTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NKLCBTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7B5F876B2DC1C8A4004BFDC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B5F879C2DC1EF83004BFDC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				7B5F87702DC1C8A4004BFDC7 /* NKLCB */,
+				7B5F87A02DC1EF83004BFDC7 /* NKLCBTests */,
 				7B5F876F2DC1C8A4004BFDC7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				7B5F876E2DC1C8A4004BFDC7 /* NKLCB.app */,
+				7B5F879F2DC1EF83004BFDC7 /* NKLCBTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +108,29 @@
 			productReference = 7B5F876E2DC1C8A4004BFDC7 /* NKLCB.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7B5F879E2DC1EF83004BFDC7 /* NKLCBTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B5F87A52DC1EF83004BFDC7 /* Build configuration list for PBXNativeTarget "NKLCBTests" */;
+			buildPhases = (
+				7B5F879B2DC1EF83004BFDC7 /* Sources */,
+				7B5F879C2DC1EF83004BFDC7 /* Frameworks */,
+				7B5F879D2DC1EF83004BFDC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B5F87A42DC1EF83004BFDC7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7B5F87A02DC1EF83004BFDC7 /* NKLCBTests */,
+			);
+			name = NKLCBTests;
+			packageProductDependencies = (
+			);
+			productName = NKLCBTests;
+			productReference = 7B5F879F2DC1EF83004BFDC7 /* NKLCBTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +143,10 @@
 				TargetAttributes = {
 					7B5F876D2DC1C8A4004BFDC7 = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					7B5F879E2DC1EF83004BFDC7 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 7B5F876D2DC1C8A4004BFDC7;
 					};
 				};
 			};
@@ -100,12 +165,20 @@
 			projectRoot = "";
 			targets = (
 				7B5F876D2DC1C8A4004BFDC7 /* NKLCB */,
+				7B5F879E2DC1EF83004BFDC7 /* NKLCBTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7B5F876C2DC1C8A4004BFDC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B5F879D2DC1EF83004BFDC7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,11 +195,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7B5F879B2DC1EF83004BFDC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B5F87A42DC1EF83004BFDC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B5F876D2DC1C8A4004BFDC7 /* NKLCB */;
+			targetProxy = 7B5F87A32DC1EF83004BFDC7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7B5F877A2DC1C8A5004BFDC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 7B5F87702DC1C8A4004BFDC7 /* NKLCB */;
+			baseConfigurationReferenceRelativePath = Resources/Secrets.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -190,6 +280,8 @@
 		};
 		7B5F877B2DC1C8A5004BFDC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 7B5F87702DC1C8A4004BFDC7 /* NKLCB */;
+			baseConfigurationReferenceRelativePath = Resources/Secrets.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -255,11 +347,15 @@
 				DEVELOPMENT_TEAM = MPMHNJMTGA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NKLCB/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_PREPROCESS = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -284,11 +380,15 @@
 				DEVELOPMENT_TEAM = MPMHNJMTGA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NKLCB/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_PREPROCESS = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,6 +399,42 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7B5F87A62DC1EF83004BFDC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MPMHNJMTGA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youngkyu.NKLCBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NKLCB.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NKLCB";
+			};
+			name = Debug;
+		};
+		7B5F87A72DC1EF83004BFDC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MPMHNJMTGA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youngkyu.NKLCBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NKLCB.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NKLCB";
 			};
 			name = Release;
 		};
@@ -319,6 +455,15 @@
 			buildConfigurations = (
 				7B5F877D2DC1C8A5004BFDC7 /* Debug */,
 				7B5F877E2DC1C8A5004BFDC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B5F87A52DC1EF83004BFDC7 /* Build configuration list for PBXNativeTarget "NKLCBTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B5F87A62DC1EF83004BFDC7 /* Debug */,
+				7B5F87A72DC1EF83004BFDC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
