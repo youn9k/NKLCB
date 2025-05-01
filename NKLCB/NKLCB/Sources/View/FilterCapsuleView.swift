@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct FilterCapsuleView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     let title: String
     let color: Color
     let isSelected: Bool

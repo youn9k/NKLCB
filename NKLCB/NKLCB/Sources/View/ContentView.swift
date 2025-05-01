@@ -2,7 +2,8 @@ import SwiftUI
 import SafariServices
 
 struct ContentView: View {
-    
+    @Environment(\.colorScheme) private var colorScheme
+
     // MARK: Model
     #if DEBUG
     @StateObject private var recruitModel = RecruitModelStub()
@@ -68,6 +69,7 @@ struct ContentView: View {
                 )
             }
         }
+        .background(colorScheme == .dark ? Color.inverseGray200 : Color.white)
     }
     
     var logoView: some View {
@@ -104,6 +106,7 @@ struct ContentView: View {
             HStack {
                 Image(.airplane)
                 Text(filter.position ?? "해당 공고에서 \(visiblePositions.count)개의 직무를 찾았어요.")
+                    .foregroundStyle(filter.position != nil ? .gray900 : .gray600)
                 Spacer()
                 Image(.arrowBottom)
             }

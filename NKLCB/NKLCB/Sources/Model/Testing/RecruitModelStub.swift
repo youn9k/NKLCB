@@ -13,9 +13,7 @@ final class RecruitModelStub: RecruitModelType, ObservableObject {
         isLoading = true; defer { isLoading = false }
         try? await Task.sleep(for: .milliseconds(200))
         guard let data = try? JSONDecoder().decode([RecruitResponseDTO].self, from: dummyData) else { return }
-        print(data)
         recruits = RecruitMapper.map(dto: data)
-        print(recruits)
     }
     
     func filter(with filter: RecruitFilter) -> [RecruitEntity] {

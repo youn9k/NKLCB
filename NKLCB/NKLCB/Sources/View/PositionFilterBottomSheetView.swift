@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct PositionFilterBottomSheetView: View {
+    @Environment(\.colorScheme) var colorSchme
+    
     @Binding var isPresented: Bool
     @Binding var selectedPosition: String?
     let positions: [String]
@@ -30,20 +32,24 @@ struct PositionFilterBottomSheetView: View {
                         selectedPosition = position
                         isPresented = false
                     }) {
-                        HStack {
-                            Image(systemName: isSelected ? "checkmark" : "")
-                            Text(position)
-                        }
-                        .nkFont(.t4(isSelected ? .bold : .medium))
-                        .foregroundStyle(isSelected ? Color.gray900 : Color.gray700)
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 15)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        positionCell(title: position, isSelected: isSelected)
                     }
                 }
             }
             .padding()
         }
+    }
+    
+    func positionCell(title: String, isSelected: Bool) -> some View {
+        HStack {
+            if isSelected { Image(systemName: "checkmark") }
+            Text(title)
+        }
+        .nkFont(.t4(isSelected ? .bold : .medium))
+        .foregroundStyle(positionCellColor(isSelected))
+        .padding(.horizontal, 20)
+        .padding(.vertical, 15)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     var clearButton: some View {
@@ -54,4 +60,18 @@ struct PositionFilterBottomSheetView: View {
         .foregroundColor(.red)
         .padding()
     }
+}
+
+extension PositionFilterBottomSheetView {
+    private func positionCellColor(_ isSelected: Bool) -> Color {
+        if colorSchme == .dark {
+            isSelected ? Color.white : Color.gray300
+        } else {
+            isSelected ? Color.gray900 : Color.gray700
+        }
+    }
+}
+
+#Preview {
+    ContentView()
 }
