@@ -24,7 +24,7 @@ final class NKLCBTests: XCTestCase {
         """.data(using: .utf8)!
 
         // When: 디코딩 시도
-        let postings = try JSONDecoder().decode([JobPosting].self, from: json)
+        let postings = try JSONDecoder().decode([Recruit].self, from: json)
 
         // Then: companyCode는 .unknown으로 디코딩되어야 함
         XCTAssertEqual(postings.first?.companyCode, .unknown)
@@ -52,7 +52,7 @@ final class NKLCBTests: XCTestCase {
         """.data(using: .utf8)!
 
         // When
-        let postings = try JSONDecoder().decode([JobPosting].self, from: json)
+        let postings = try JSONDecoder().decode([Recruit].self, from: json)
 
         // Then
         XCTAssertEqual(postings.first?.jobType, .unknown)
@@ -80,7 +80,7 @@ final class NKLCBTests: XCTestCase {
         """.data(using: .utf8)!
 
         // When
-        let postings = try JSONDecoder().decode([JobPosting].self, from: json)
+        let postings = try JSONDecoder().decode([Recruit].self, from: json)
 
         // Then
         XCTAssertEqual(postings.first?.workplace, .unknown)
@@ -109,7 +109,7 @@ final class NKLCBTests: XCTestCase {
 
             // When
             let decoder = JSONDecoder()
-            let postings = try decoder.decode([JobPosting].self, from: json)
+            let postings = try decoder.decode([Recruit].self, from: json)
 
             // Then
             XCTAssertEqual(postings.count, 1)
