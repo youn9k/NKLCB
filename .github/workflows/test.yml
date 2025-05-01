@@ -43,7 +43,7 @@ jobs:
           touch ${{ env.SECRET_XCCONFIG_PATH }}
           echo "" > ${{ env.SECRET_XCCONFIG_PATH }}
 
-       - name: 🏷️ Cache SPM
+      - name: 🏷️ Cache SPM
         uses: actions/cache@v3
         with:
           path: ${{ env.CACHED_SPM_DEPENDENCY_PATH }}
@@ -51,7 +51,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-spm-
 
-       - name: 🏷️ Cache DerivedData
+      - name: 🏷️ Cache DerivedData
         uses: actions/cache@v3
         with:
           path: ${{ env.DERIVED_DATA_PATH }}
