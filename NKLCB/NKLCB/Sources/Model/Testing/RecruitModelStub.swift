@@ -11,7 +11,7 @@ final class RecruitModelStub: RecruitModelType, ObservableObject {
     
     func fetchRecruits(by company: CompanyFilter) async {
         isLoading = true; defer { isLoading = false }
-        try? await Task.sleep(for: .milliseconds(2000))
+        try? await Task.sleep(for: .milliseconds(200))
         guard let data = try? JSONDecoder().decode([Recruit].self, from: dummyData) else { return }
         recruits = data
     }

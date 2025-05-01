@@ -12,11 +12,19 @@ struct ContentView: View {
     }
     
     private var visiblePositions: [String] {
-        return visibleRecruits.compactMap(\.positionType)
+        return Array(Set(
+            recruitModel.recruits
+                .filter({
+                    filter.company == .all || $0.companyCode == filter.company.companyCode
+                })
+                .compactMap(\.positionType)
+        ))
+        .sorted()
     }
 
     @State private var filter = RecruitFilter()
     @State private var selectedURL: URL?
+    @State private var isPositionSheetPresented = false
     
     private let recruitGridColumns = [
         GridItem(.flexible()),
@@ -33,7 +41,10 @@ struct ContentView: View {
                     Section {
                         RecruitGridView
                     } header: {
-                        filterView
+                        VStack(spacing: 15) {
+                            filterView
+                            positionFilterView
+                        }
                     }
                 }
             }
@@ -44,6 +55,13 @@ struct ContentView: View {
             }
             .sheet(item: $selectedURL) { url in
                 WebView(url: url)
+            }
+            .sheet(isPresented: $isPositionSheetPresented) {
+                PositionFilterBottomSheetView(
+                    isPresented: $isPositionSheetPresented,
+                    selectedPosition: $filter.position,
+                    positions: visiblePositions
+                )
             }
         }
     }
@@ -70,6 +88,30 @@ struct ContentView: View {
                         filter.company = company
                     }
                 }
+            }
+        }
+        .padding(.horizontal, 20)
+    }
+    
+    var positionFilterView: some View {
+        Button {
+            isPositionSheetPresented = true
+        } label: {
+            HStack {
+                Image(.airplane)
+                Text(filter.position ?? "해당 공고에서 \(visiblePositions.count)개의 직무를 찾았어요.")
+                Spacer()
+                Image(.arrowBottom)
+            }
+            .nkFont(.t4(.medium))
+            .foregroundStyle(.gray600)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 15)
+            .padding(.horizontal, 20)
+            .background {
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.white)
+                    .stroke(Color.gray200, lineWidth: 1)
             }
         }
         .padding(.horizontal, 20)
