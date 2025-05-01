@@ -9,5 +9,11 @@
 		<key>RECRUIT_LIST</key>
 		<string>$(RECRUIT_LIST)</string>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Pretendard-Bold.otf</string>
+		<string>Pretendard-Light.otf</string>
+		<string>Pretendard-Medium.otf</string>
+	</array>
 </dict>
 </plist>
