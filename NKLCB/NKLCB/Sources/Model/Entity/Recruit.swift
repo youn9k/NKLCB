@@ -1,7 +1,7 @@
 import Foundation
 
-struct JobPosting: Codable {
-    let postingID: Int                   // 고유 ID (예: "-8164133446")
+struct Recruit: Codable, Equatable {
+    let id: Int                   // 고유 ID (예: "-8164133446")
     let companyCode: CompanyCode            // 회사 코드 (예: "NAVER", "KAKAO")
     let announcementID: Int                 // 공고 ID (예: 150420)
     let jobCategory: String?                // 직무 분류명 (예: "Tech", "Engineering", "R&D")
@@ -15,7 +15,7 @@ struct JobPosting: Codable {
     let endDate: String?                    // 공고 마감일 (예: "2999-12-31 14:59")
 
     enum CodingKeys: String, CodingKey {
-        case postingID = "id"
+        case id
         case companyCode = "companyCd"
         case announcementID = "annoId"
         case jobCategory = "classCdNm"
