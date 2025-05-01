@@ -3,8 +3,7 @@ import SwiftUI
 struct RecruitCardView: View {
     let companyName: String
     let title: String
-    let startDate: String?
-    let endDate: String?
+    let period: RecruitPeriod
     let position: String
     let jobType: String
     let detailPageURL: String
@@ -47,7 +46,7 @@ struct RecruitCardView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 20, height: 20)
-            Text(period(from: startDate, to: endDate))
+            Text(periodText())
                 .nkFont(.t5(.medium))
                 .foregroundStyle(.gray700)
         }
@@ -59,8 +58,16 @@ struct RecruitCardView: View {
                 .foregroundStyle(.gray700)
     }
     
-    func period(from: String?, to: String?) -> String {
-        return "~ 2025-12-31"
+    func periodText() -> String {
+        switch period {
+        case .infinity:
+            return "상시 채용"
+        case .untilHired:
+            return "~ 채용 시 마감"
+        case .deadline(_, let end):
+            let endString = CachedDateFormatter.string(end, format: "yyyy-MM-dd") ?? "2099-12-31"
+            return "~ \(endString)"
+        }
     }
     
     func description(position: String, jobType: String) -> String {
@@ -105,4 +112,8 @@ struct RecruitCardSkeletonView: View {
                 .frame(height: 20)
         }
     }
+}
+
+#Preview {
+    ContentView()
 }

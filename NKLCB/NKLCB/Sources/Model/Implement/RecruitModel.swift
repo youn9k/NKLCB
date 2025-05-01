@@ -15,7 +15,7 @@ final class RecruitModel: RecruitModelType, ObservableObject {
         let result: Result<[RecruitResponseDTO], Error> = await NetworkService.request(RecruitAPI.fetchRecruits(company: company))
         switch result {
         case .success(let data):
-            let fetched = data.map { $0.toEntity() }
+            let fetched = RecruitMapper.map(dto: data)
             recruits = fetched
         case .failure(let error):
             toastMessage = error.localizedDescription

@@ -27,7 +27,7 @@ enum CompanyFilter: String, CaseIterable, Identifiable {
         }
     }
     
-    /// Recruit(Entity) 에서 회사명으로 필터링하기 위함
+    /// RecruitEntity 에서 회사명으로 필터링하기 위함
     var companyCode: CompanyCode? {
         switch self {
         case .all: return nil

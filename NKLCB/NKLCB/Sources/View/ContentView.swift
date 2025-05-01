@@ -4,7 +4,11 @@ import SafariServices
 struct ContentView: View {
     
     // MARK: Model
+    #if DEBUG
     @StateObject private var recruitModel = RecruitModelStub()
+    #else
+    @StateObject private var recruitModel = RecruitModel()
+    #endif
     
     // MARK: State
     private var visibleRecruits: [RecruitEntity] {
@@ -21,7 +25,7 @@ struct ContentView: View {
         ))
         .sorted()
     }
-
+    
     @State private var filter = RecruitFilter()
     @State private var selectedURL: URL?
     @State private var isPositionSheetPresented = false
@@ -120,7 +124,7 @@ struct ContentView: View {
     var RecruitGridView: some View {
         ScrollView {
             LazyVGrid(columns: recruitGridColumns, spacing: 10) {
-                Group{
+                Group {
                     if recruitModel.isLoading {
                         ForEach((0..<4)) { _ in
                             RecruitCardSkeletonView()
@@ -130,8 +134,7 @@ struct ContentView: View {
                             RecruitCardView(
                                 companyName: recruit.detailedCompanyName,
                                 title: recruit.title,
-                                startDate: recruit.startDate,
-                                endDate: recruit.endDate,
+                                period: recruit.recruitPeriod,
                                 position: recruit.positionType,
                                 jobType: recruit.jobType.rawValue,
                                 detailPageURL: recruit.detailPageURL

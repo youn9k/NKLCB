@@ -1,7 +1,7 @@
 import Foundation
 
 struct RecruitResponseDTO: Codable {
-    let id: Int                   // 고유 ID (예: "-8164133446")
+    let id: Int                             // 고유 ID (예: "-8164133446")
     let companyCode: CompanyCode            // 회사 코드 (예: "NAVER", "KAKAO")
     let announcementID: Int                 // 공고 ID (예: 150420)
     let jobCategory: String?                // 직무 분류명 (예: "Tech", "Engineering", "R&D")
@@ -30,25 +30,6 @@ struct RecruitResponseDTO: Codable {
     }
 }
 
-extension RecruitResponseDTO {
-    func toEntity() -> RecruitEntity {
-        RecruitEntity(
-            id: id,
-            companyCode: companyCode,
-            announcementID: announcementID,
-            jobCategory: jobCategory,
-            jobType: jobType,
-            title: title,
-            positionType: positionType,
-            detailedCompanyName: detailedCompanyName,
-            detailPageURL: detailPageURL,
-            workplace: workplace,
-            startDate: startDate,
-            endDate: endDate
-        )
-    }
-}
-
 enum CompanyCode: String, Codable {
     case baemin = "BAEMIN"
     case coupang = "COUPANG"
@@ -59,6 +40,12 @@ enum CompanyCode: String, Codable {
     case toss = "TOSS"
     case yanolja = "YANOLJA"
     case unknown
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawValue = try container.decode(String.self)
+        self = CompanyCode(rawValue: rawValue) ?? .unknown
+    }
 }
 
 enum JobType: String, Codable {
@@ -68,9 +55,21 @@ enum JobType: String, Codable {
     case 임원 = "임원"
     case 정규 = "정규"
     case unknown
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawValue = try container.decode(String.self)
+        self = JobType(rawValue: rawValue) ?? .unknown
+    }
 }
 
 enum Workplace: String, Codable {
     case 서울 = "서울"
     case unknown
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawValue = try container.decode(String.self)
+        self = Workplace(rawValue: rawValue) ?? .unknown
+    }
 }
