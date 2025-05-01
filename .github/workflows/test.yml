@@ -67,7 +67,7 @@ jobs:
       - name: ✅ Run tests for iOS 18.0 on iPhone 16 Pro
         env:
           PROJECT_PATH: ./NKLCB/NKLCB.xcodeproj
-          SCHEME: NKCLB
+          SCHEME: NKLCB
           DESTINATION: platform=iOS Simulator,OS=18.0,name=iPhone 16 Pro
         run: >
           xcodebuild
