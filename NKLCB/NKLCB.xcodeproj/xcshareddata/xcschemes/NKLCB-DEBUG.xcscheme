@@ -15,6 +15,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7B18BDB62DC3AA8C0074F922"
+               BuildableName = "NKLCB-DEBUG.app"
+               BlueprintName = "NKLCB-DEBUG"
+               ReferencedContainer = "container:NKLCB.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "7B5F876D2DC1C8A4004BFDC7"
                BuildableName = "NKLCB.app"
                BlueprintName = "NKLCB"
@@ -29,22 +43,9 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7B5F879E2DC1EF83004BFDC7"
-               BuildableName = "NKLCBTests.xctest"
-               BlueprintName = "NKLCBTests"
-               ReferencedContainer = "container:NKLCB.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -63,6 +64,15 @@
             ReferencedContainer = "container:NKLCB.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7B18BDB62DC3AA8C0074F922"
+            BuildableName = "NKLCB-DEBUG.app"
+            BlueprintName = "NKLCB-DEBUG"
+            ReferencedContainer = "container:NKLCB.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -70,16 +80,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7B5F876D2DC1C8A4004BFDC7"
-            BuildableName = "NKLCB.app"
-            BlueprintName = "NKLCB"
+            BlueprintIdentifier = "7B18BDB62DC3AA8C0074F922"
+            BuildableName = "NKLCB-DEBUG.app"
+            BlueprintName = "NKLCB-DEBUG"
             ReferencedContainer = "container:NKLCB.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
