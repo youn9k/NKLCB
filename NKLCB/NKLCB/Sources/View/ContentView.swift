@@ -4,17 +4,20 @@ import SafariServices
 struct ContentView: View {
     
     // MARK: Model
-    @StateObject private var recruitModel = RecruitModel()
+    @StateObject private var recruitModel = RecruitModelStub()
     
     // MARK: State
     private var visibleRecruits: [Recruit] {
-        if selectedCompany == .all {
-            return recruitModel.recruits
-        }
-        return recruitModel.recruits.filter { $0.companyCode == selectedCompany.companyCode }
+        recruitModel.filter(with: filter)
     }
-    @State private var selectedCompany: CompanyFilter = .all
+    
+    private var visiblePositions: [String] {
+        return visibleRecruits.compactMap(\.positionType)
+    }
+
+    @State private var filter = RecruitFilter()
     @State private var selectedURL: URL?
+    
     private let recruitGridColumns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -34,7 +37,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .onChange(of: selectedCompany) {
+            .onChange(of: filter) {
                 withAnimation {
                     proxy.scrollTo("top", anchor: .top)
                 }
@@ -61,10 +64,10 @@ struct ContentView: View {
                     FilterCapsuleView(
                         title: company.rawValue,
                         color: company.companyColor,
-                        isSelected: company == selectedCompany
+                        isSelected: company == filter.company
                     )
                     .onTapGesture {
-                        selectedCompany = company
+                        filter.company = company
                     }
                 }
             }

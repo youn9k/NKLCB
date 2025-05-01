@@ -21,10 +21,19 @@ final class RecruitModel: RecruitModelType, ObservableObject {
         }
     }
     
-    func filter(by company: CompanyFilter) -> [Recruit] {
-        if company == .all {
-            return recruits
+    func filter(with filter: RecruitFilter) -> [Recruit] {
+        return recruits.filter {
+            let matchedCompany = matchedCompany($0, filter)
+            let matchedPosition = matchedPosition($0, filter)
+            return matchedCompany && matchedPosition
         }
-        return recruits.filter { $0.companyCode == company.companyCode }
+    }
+    
+    private func matchedCompany(_ recruit: Recruit, _ filter: RecruitFilter) -> Bool {
+        return filter.company == .all || recruit.companyCode == filter.company.companyCode
+    }
+    
+    private func matchedPosition(_ recruit: Recruit, _ filter: RecruitFilter) -> Bool {
+        return filter.position == nil || recruit.positionType == filter.position
     }
 }

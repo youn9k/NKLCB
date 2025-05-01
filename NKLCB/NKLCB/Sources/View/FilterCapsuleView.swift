@@ -7,7 +7,7 @@ struct FilterCapsuleView: View {
     
     var body: some View {
         Text(title)
-            .nkFont(.t4(.medium))
+            .nkFont(.t4(isSelected ? .bold : .medium))
             .lineLimit(1)
             .foregroundStyle(isSelected ? .white : .gray900)
             .frame(minWidth: 40, minHeight: 40)
