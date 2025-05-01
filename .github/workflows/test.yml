@@ -1,0 +1,73 @@
+name: Test ✅
+
+on:
+  push:
+    branches: [ "develop", "main" ]
+  pull_request:
+    branches: [ "develop", "main" ]
+  schedule:
+    - cron: '0 0 * * *' # 매일 오전 9시 (KST 기준 UTC + 9)
+
+env:
+    SECRET_XCCONFIG_PATH: NKLCB/NKLCB/Resources/Secrets.xcconfig
+    CACHED_SPM_DEPENDENCY_PATH: ~/Library/Developer/Xcode/DerivedData/NKLCB*/SourcePackages/
+    DERIVED_DATA_PATH: ~/Library/Developer/Xcode/DerivedData
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: ✅ test
+    runs-on: macos-15
+
+    steps:
+      - name: 🏷️ Checkout
+        uses: actions/checkout@v3
+
+      - name: 🏷️ List Xcode installations
+        run: sudo ls -1 /Applications | grep "Xcode"
+
+      - name: 🏷️ Select Xcode 16.0
+        run: sudo xcode-select -s /Applications/Xcode_16.0.app/Contents/Developer
+
+      - name: 🏷️ Show Xcode version
+        run: xcodebuild -version
+
+      - name: 🏷️ Show swift version
+        run: swift --version
+    
+      - name: 🏷️ Make `Secrets.xcconfig`
+        run: |
+          touch ${{ env.SECRET_XCCONFIG_PATH }}
+          echo "" > ${{ env.SECRET_XCCONFIG_PATH }}
+
+       - name: 🏷️ Cache SPM
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.CACHED_SPM_DEPENDENCY_PATH }}
+          key: ${{ runner.os }}-spm-${{ hashFiles('NKLCB/NKLCB.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+
+       - name: 🏷️ Cache DerivedData
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.DERIVED_DATA_PATH }}
+          key: ${{ runner.os }}-iOS_derived_data-xcode_16.0
+          restore-keys: |
+            ${{ runner.os }}-iOS_derived_data-
+    
+      - name: ✅ Run tests for iOS 18.0 on iPhone 16 Pro
+        env:
+          PROJECT_PATH: ./NKCLB/NKCLB.xcodeproj
+          SCHEME: NKCLBTests
+          DESTINATION: platform=iOS Simulator,OS=18.0,name=iPhone 16 Pro
+        run: >
+          xcodebuild
+          -project "${{ env.PROJECT_PATH }}"
+          -scheme "${{ env.SCHEME }}"
+          -destination "${{ env.DESTINATION }}"
+          clean test
+          | xcpretty && exit ${PIPESTATUS[0]}
