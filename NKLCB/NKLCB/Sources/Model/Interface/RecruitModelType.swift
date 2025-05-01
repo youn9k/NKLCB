@@ -1,8 +1,8 @@
 import Foundation
 
 protocol RecruitModelType: ObservableObject {
-    var recruits: [Recruit] { get }
+    var recruits: [RecruitEntity] { get }
     
     func fetchRecruits(by company: CompanyFilter) async
-    func filter(with filter: RecruitFilter) -> [Recruit]
+    func filter(with filter: RecruitFilter) -> [RecruitEntity]
 }

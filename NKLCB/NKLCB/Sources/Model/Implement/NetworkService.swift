@@ -1,11 +1,11 @@
 import Alamofire
 
 final class NetworkService {
-    static func request(_ api: API) async -> Result<[Recruit], Error> {
+    static func request<T: Decodable>(_ api: API, responseType: T.Type = T.self) async -> Result<T, Error> {
         let url = api.baseURL + "/" + api.path
         let task = AF.request(url, method: api.method, parameters: api.parameters)
             .validate()
-            .serializingDecodable([Recruit].self)
+            .serializingDecodable(responseType)
 
         let response = await task.response
         switch response.result {

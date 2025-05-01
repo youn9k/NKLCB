@@ -7,7 +7,7 @@ struct ContentView: View {
     @StateObject private var recruitModel = RecruitModelStub()
     
     // MARK: State
-    private var visibleRecruits: [Recruit] {
+    private var visibleRecruits: [RecruitEntity] {
         recruitModel.filter(with: filter)
     }
     

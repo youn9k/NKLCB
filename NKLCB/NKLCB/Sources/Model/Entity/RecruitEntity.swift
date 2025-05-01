@@ -1,6 +1,6 @@
 import Foundation
 
-struct Recruit: Codable, Equatable {
+struct RecruitEntity: Equatable {
     let id: Int                   // 고유 ID (예: "-8164133446")
     let companyCode: CompanyCode            // 회사 코드 (예: "NAVER", "KAKAO")
     let announcementID: Int                 // 공고 ID (예: 150420)
@@ -13,45 +13,4 @@ struct Recruit: Codable, Equatable {
     let workplace: Workplace                // 근무 위치 (예: "서울")
     let startDate: String?                  // 공고 시작일 (예: "2024-09-20 02:00")
     let endDate: String?                    // 공고 마감일 (예: "2999-12-31 14:59")
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case companyCode = "companyCd"
-        case announcementID = "annoId"
-        case jobCategory = "classCdNm"
-        case jobType = "empTypeCdNm"
-        case title = "annoSubject"
-        case positionType = "subJobCdNm"
-        case detailedCompanyName = "sysCompanyCdNm"
-        case detailPageURL = "jobDetailLink"
-        case workplace = "workplace"
-        case startDate
-        case endDate
-    }
-}
-
-enum CompanyCode: String, Codable {
-    case baemin = "BAEMIN"
-    case coupang = "COUPANG"
-    case daangn = "DAANGN"
-    case kakao = "KAKAO"
-    case line = "LINE"
-    case naver = "NAVER"
-    case toss = "TOSS"
-    case yanolja = "YANOLJA"
-    case unknown
-}
-
-enum JobType: String, Codable {
-    case 기간제 = "기간제"
-    case 비정규 = "비정규"
-    case 인턴 = "인턴"
-    case 임원 = "임원"
-    case 정규 = "정규"
-    case unknown
-}
-
-enum Workplace: String, Codable {
-    case 서울 = "서울"
-    case unknown
 }
