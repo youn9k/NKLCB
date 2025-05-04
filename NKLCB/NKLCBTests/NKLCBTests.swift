@@ -134,7 +134,9 @@ final class NKLCBTests: XCTestCase {
         }
         
         // Then
-        let calendar = Calendar(identifier: .gregorian)
+        guard let timeZone = TimeZone(identifier: "Asia/Seoul") else { return XCTFail("timezone not found") }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = timeZone
         XCTAssertEqual(calendar.component(.year, from: date), 2025)
         XCTAssertEqual(calendar.component(.month, from: date), 5)
         XCTAssertEqual(calendar.component(.day, from: date), 12)
@@ -153,7 +155,9 @@ final class NKLCBTests: XCTestCase {
         }
         
         // Then
-        let calendar = Calendar(identifier: .gregorian)
+        guard let timeZone = TimeZone(identifier: "Asia/Seoul") else { return XCTFail("timezone not found") }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = timeZone
         XCTAssertEqual(calendar.component(.year, from: date), 2025)
         XCTAssertEqual(calendar.component(.month, from: date), 5)
         XCTAssertEqual(calendar.component(.day, from: date), 12)
