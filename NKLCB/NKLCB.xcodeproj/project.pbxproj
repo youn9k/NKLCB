@@ -31,6 +31,8 @@
 		7B67AC602DD5BB6D0047C69D /* RecruitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC3B2DD5BB6D0047C69D /* RecruitCardView.swift */; };
 		7B67AC612DD5BB6D0047C69D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC3C2DD5BB6D0047C69D /* WebView.swift */; };
 		7B67AC622DD5BB6D0047C69D /* NKLCBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC3E2DD5BB6D0047C69D /* NKLCBApp.swift */; };
+		7B67AC8E2DD5C2390047C69D /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC8D2DD5C2390047C69D /* Keychain.swift */; };
+		7B67AC902DD5C2560047C69D /* KeychainType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC8F2DD5C2560047C69D /* KeychainType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		7B67AC3B2DD5BB6D0047C69D /* RecruitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitCardView.swift; sourceTree = "<group>"; };
 		7B67AC3C2DD5BB6D0047C69D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		7B67AC3E2DD5BB6D0047C69D /* NKLCBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKLCBApp.swift; sourceTree = "<group>"; };
+		7B67AC8D2DD5C2390047C69D /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		7B67AC8F2DD5C2560047C69D /* KeychainType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -291,6 +295,7 @@
 				7B67AC202DD5BB6D0047C69D /* DTO */,
 				7B67AC2E2DD5BB6D0047C69D /* Mapper */,
 				7B67AC842DD5BDB70047C69D /* Model */,
+				7B67AC8C2DD5C2070047C69D /* KeyChain */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -309,6 +314,15 @@
 				7B67AC342DD5BB6D0047C69D /* Font.swift */,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		7B67AC8C2DD5C2070047C69D /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				7B67AC8F2DD5C2560047C69D /* KeychainType.swift */,
+				7B67AC8D2DD5C2390047C69D /* Keychain.swift */,
+			);
+			path = KeyChain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,12 +449,14 @@
 				7B67AC542DD5BB6D0047C69D /* API.swift in Sources */,
 				7B67AC552DD5BB6D0047C69D /* RecruitModelType.swift in Sources */,
 				7B67AC562DD5BB6D0047C69D /* RecruitMapper.swift in Sources */,
+				7B67AC8E2DD5C2390047C69D /* Keychain.swift in Sources */,
 				7B67AC572DD5BB6D0047C69D /* DummyData.swift in Sources */,
 				7B67AC582DD5BB6D0047C69D /* RecruitModelStub.swift in Sources */,
 				7B67AC592DD5BB6D0047C69D /* CachedDateFormatter.swift in Sources */,
 				7B67AC5A2DD5BB6D0047C69D /* Font.swift in Sources */,
 				7B67AC5B2DD5BB6D0047C69D /* Secrets.swift in Sources */,
 				7B67AC5C2DD5BB6D0047C69D /* CollectionView.swift in Sources */,
+				7B67AC902DD5C2560047C69D /* KeychainType.swift in Sources */,
 				7B67AC5D2DD5BB6D0047C69D /* ContentView.swift in Sources */,
 				7B67AC5E2DD5BB6D0047C69D /* FilterCapsuleView.swift in Sources */,
 				7B67AC5F2DD5BB6D0047C69D /* PositionFilterBottomSheetView.swift in Sources */,
