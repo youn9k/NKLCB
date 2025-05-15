@@ -8,31 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B5F88132DC25610004BFDC7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7B5F88122DC25610004BFDC7 /* Alamofire */; };
-		7B67AC4C2DD5BB6D0047C69D /* RecruitResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC1F2DD5BB6D0047C69D /* RecruitResponseDTO.swift */; };
-		7B67AC4D2DD5BB6D0047C69D /* CompanyFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC212DD5BB6D0047C69D /* CompanyFilter.swift */; };
-		7B67AC4E2DD5BB6D0047C69D /* RecruitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC222DD5BB6D0047C69D /* RecruitEntity.swift */; };
-		7B67AC4F2DD5BB6D0047C69D /* RecruitFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC232DD5BB6D0047C69D /* RecruitFilter.swift */; };
-		7B67AC502DD5BB6D0047C69D /* RecruitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC242DD5BB6D0047C69D /* RecruitType.swift */; };
-		7B67AC512DD5BB6D0047C69D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC262DD5BB6D0047C69D /* NetworkService.swift */; };
-		7B67AC522DD5BB6D0047C69D /* RecruitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC272DD5BB6D0047C69D /* RecruitAPI.swift */; };
-		7B67AC532DD5BB6D0047C69D /* RecruitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC282DD5BB6D0047C69D /* RecruitModel.swift */; };
-		7B67AC542DD5BB6D0047C69D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC2A2DD5BB6D0047C69D /* API.swift */; };
-		7B67AC552DD5BB6D0047C69D /* RecruitModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC2B2DD5BB6D0047C69D /* RecruitModelType.swift */; };
-		7B67AC562DD5BB6D0047C69D /* RecruitMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC2D2DD5BB6D0047C69D /* RecruitMapper.swift */; };
-		7B67AC572DD5BB6D0047C69D /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC2F2DD5BB6D0047C69D /* DummyData.swift */; };
-		7B67AC582DD5BB6D0047C69D /* RecruitModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC302DD5BB6D0047C69D /* RecruitModelStub.swift */; };
-		7B67AC592DD5BB6D0047C69D /* CachedDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC332DD5BB6D0047C69D /* CachedDateFormatter.swift */; };
-		7B67AC5A2DD5BB6D0047C69D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC342DD5BB6D0047C69D /* Font.swift */; };
-		7B67AC5B2DD5BB6D0047C69D /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC352DD5BB6D0047C69D /* Secrets.swift */; };
-		7B67AC5C2DD5BB6D0047C69D /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC372DD5BB6D0047C69D /* CollectionView.swift */; };
-		7B67AC5D2DD5BB6D0047C69D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC382DD5BB6D0047C69D /* ContentView.swift */; };
-		7B67AC5E2DD5BB6D0047C69D /* FilterCapsuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC392DD5BB6D0047C69D /* FilterCapsuleView.swift */; };
-		7B67AC5F2DD5BB6D0047C69D /* PositionFilterBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC3A2DD5BB6D0047C69D /* PositionFilterBottomSheetView.swift */; };
-		7B67AC602DD5BB6D0047C69D /* RecruitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC3B2DD5BB6D0047C69D /* RecruitCardView.swift */; };
-		7B67AC612DD5BB6D0047C69D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC3C2DD5BB6D0047C69D /* WebView.swift */; };
 		7B67AC622DD5BB6D0047C69D /* NKLCBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC3E2DD5BB6D0047C69D /* NKLCBApp.swift */; };
-		7B67AC8E2DD5C2390047C69D /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC8D2DD5C2390047C69D /* Keychain.swift */; };
-		7B67AC902DD5C2560047C69D /* KeychainType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC8F2DD5C2560047C69D /* KeychainType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,31 +24,7 @@
 /* Begin PBXFileReference section */
 		7B5F876E2DC1C8A4004BFDC7 /* NKLCB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NKLCB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5F879F2DC1EF83004BFDC7 /* NKLCBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NKLCBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B67AC1F2DD5BB6D0047C69D /* RecruitResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitResponseDTO.swift; sourceTree = "<group>"; };
-		7B67AC212DD5BB6D0047C69D /* CompanyFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyFilter.swift; sourceTree = "<group>"; };
-		7B67AC222DD5BB6D0047C69D /* RecruitEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitEntity.swift; sourceTree = "<group>"; };
-		7B67AC232DD5BB6D0047C69D /* RecruitFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitFilter.swift; sourceTree = "<group>"; };
-		7B67AC242DD5BB6D0047C69D /* RecruitType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitType.swift; sourceTree = "<group>"; };
-		7B67AC262DD5BB6D0047C69D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		7B67AC272DD5BB6D0047C69D /* RecruitAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitAPI.swift; sourceTree = "<group>"; };
-		7B67AC282DD5BB6D0047C69D /* RecruitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitModel.swift; sourceTree = "<group>"; };
-		7B67AC2A2DD5BB6D0047C69D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		7B67AC2B2DD5BB6D0047C69D /* RecruitModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitModelType.swift; sourceTree = "<group>"; };
-		7B67AC2D2DD5BB6D0047C69D /* RecruitMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitMapper.swift; sourceTree = "<group>"; };
-		7B67AC2F2DD5BB6D0047C69D /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
-		7B67AC302DD5BB6D0047C69D /* RecruitModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitModelStub.swift; sourceTree = "<group>"; };
-		7B67AC332DD5BB6D0047C69D /* CachedDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedDateFormatter.swift; sourceTree = "<group>"; };
-		7B67AC342DD5BB6D0047C69D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		7B67AC352DD5BB6D0047C69D /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
-		7B67AC372DD5BB6D0047C69D /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		7B67AC382DD5BB6D0047C69D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		7B67AC392DD5BB6D0047C69D /* FilterCapsuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCapsuleView.swift; sourceTree = "<group>"; };
-		7B67AC3A2DD5BB6D0047C69D /* PositionFilterBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionFilterBottomSheetView.swift; sourceTree = "<group>"; };
-		7B67AC3B2DD5BB6D0047C69D /* RecruitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitCardView.swift; sourceTree = "<group>"; };
-		7B67AC3C2DD5BB6D0047C69D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		7B67AC3E2DD5BB6D0047C69D /* NKLCBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKLCBApp.swift; sourceTree = "<group>"; };
-		7B67AC8D2DD5C2390047C69D /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		7B67AC8F2DD5C2560047C69D /* KeychainType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -107,6 +59,91 @@
 				7B67AC7A2DD5BB7A0047C69D /* Exceptions for "Resources" folder in "NKLCB" target */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7B67AD352DD5E19F0047C69D /* UseCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		7B67AD3B2DD5E1F40047C69D /* Interface */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		7B67AD422DD5E1F60047C69D /* Entity */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		7B67AD492DD5E1FA0047C69D /* API */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = API;
+			sourceTree = "<group>";
+		};
+		7B67AD4C2DD5E1FD0047C69D /* DTO */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		7B67AD4F2DD5E2000047C69D /* Model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B67AD522DD5E2020047C69D /* Mapper */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		7B67AD562DD5E2040047C69D /* KeyChain */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
+		7B67AD5B2DD5E20C0047C69D /* Testing */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		7B67AD642DD5E2100047C69D /* View */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B67AD6C2DD5E2150047C69D /* DesignSystem */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		7B67AD6F2DD5E2170047C69D /* Config */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Config;
+			sourceTree = "<group>";
+		};
+		7B67AD722DD5E2190047C69D /* Utility */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7B67AD782DD5E69F0047C69D /* OAuth */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		7B67AD792DD5E6B10047C69D /* Logger */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		7BF7E5E52DD5FD46005D9483 /* Service */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7BF7E5E62DD5FD4F005D9483 /* API */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -148,63 +185,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7B67AC202DD5BB6D0047C69D /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-				7B67AC1F2DD5BB6D0047C69D /* RecruitResponseDTO.swift */,
-			);
-			path = DTO;
-			sourceTree = "<group>";
-		};
-		7B67AC252DD5BB6D0047C69D /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				7B67AC212DD5BB6D0047C69D /* CompanyFilter.swift */,
-				7B67AC222DD5BB6D0047C69D /* RecruitEntity.swift */,
-				7B67AC232DD5BB6D0047C69D /* RecruitFilter.swift */,
-				7B67AC242DD5BB6D0047C69D /* RecruitType.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		7B67AC2E2DD5BB6D0047C69D /* Mapper */ = {
-			isa = PBXGroup;
-			children = (
-				7B67AC2D2DD5BB6D0047C69D /* RecruitMapper.swift */,
-			);
-			path = Mapper;
-			sourceTree = "<group>";
-		};
-		7B67AC312DD5BB6D0047C69D /* Testing */ = {
-			isa = PBXGroup;
-			children = (
-				7B67AC2F2DD5BB6D0047C69D /* DummyData.swift */,
-				7B67AC302DD5BB6D0047C69D /* RecruitModelStub.swift */,
-			);
-			path = Testing;
-			sourceTree = "<group>";
-		};
-		7B67AC362DD5BB6D0047C69D /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				7B67AC332DD5BB6D0047C69D /* CachedDateFormatter.swift */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
-		7B67AC3D2DD5BB6D0047C69D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7B67AC372DD5BB6D0047C69D /* CollectionView.swift */,
-				7B67AC382DD5BB6D0047C69D /* ContentView.swift */,
-				7B67AC392DD5BB6D0047C69D /* FilterCapsuleView.swift */,
-				7B67AC3A2DD5BB6D0047C69D /* PositionFilterBottomSheetView.swift */,
-				7B67AC3B2DD5BB6D0047C69D /* RecruitCardView.swift */,
-				7B67AC3C2DD5BB6D0047C69D /* WebView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		7B67AC3F2DD5BB6D0047C69D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,8 +210,10 @@
 		7B67AC7D2DD5BBA50047C69D /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7B67AC2A2DD5BB6D0047C69D /* API.swift */,
-				7B67AC262DD5BB6D0047C69D /* NetworkService.swift */,
+				7BF7E5E62DD5FD4F005D9483 /* API */,
+				7BF7E5E52DD5FD46005D9483 /* Service */,
+				7B67AD792DD5E6B10047C69D /* Logger */,
+				7B67AD782DD5E69F0047C69D /* OAuth */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -239,9 +221,10 @@
 		7B67AC7F2DD5BBB20047C69D /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				7B67AC852DD5BDDA0047C69D /* Interface */,
-				7B67AC252DD5BB6D0047C69D /* Entity */,
-				7B67AC312DD5BB6D0047C69D /* Testing */,
+				7B67AD352DD5E19F0047C69D /* UseCase */,
+				7B67AD3B2DD5E1F40047C69D /* Interface */,
+				7B67AD422DD5E1F60047C69D /* Entity */,
+				7B67AD5B2DD5E20C0047C69D /* Testing */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -249,7 +232,7 @@
 		7B67AC802DD5BBBA0047C69D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				7B67AC3D2DD5BB6D0047C69D /* View */,
+				7B67AD642DD5E2100047C69D /* View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -257,72 +240,23 @@
 		7B67AC812DD5BC850047C69D /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				7B67AC882DD5BE430047C69D /* DesignSystem */,
-				7B67AC872DD5BE260047C69D /* Config */,
-				7B67AC362DD5BB6D0047C69D /* Utility */,
+				7B67AD6C2DD5E2150047C69D /* DesignSystem */,
+				7B67AD6F2DD5E2170047C69D /* Config */,
+				7B67AD722DD5E2190047C69D /* Utility */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		7B67AC822DD5BCB30047C69D /* API */ = {
-			isa = PBXGroup;
-			children = (
-				7B67AC272DD5BB6D0047C69D /* RecruitAPI.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		7B67AC842DD5BDB70047C69D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7B67AC282DD5BB6D0047C69D /* RecruitModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7B67AC852DD5BDDA0047C69D /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				7B67AC2B2DD5BB6D0047C69D /* RecruitModelType.swift */,
-			);
-			path = Interface;
 			sourceTree = "<group>";
 		};
 		7B67AC862DD5BE0F0047C69D /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7B67AC822DD5BCB30047C69D /* API */,
-				7B67AC202DD5BB6D0047C69D /* DTO */,
-				7B67AC2E2DD5BB6D0047C69D /* Mapper */,
-				7B67AC842DD5BDB70047C69D /* Model */,
-				7B67AC8C2DD5C2070047C69D /* KeyChain */,
+				7B67AD492DD5E1FA0047C69D /* API */,
+				7B67AD4C2DD5E1FD0047C69D /* DTO */,
+				7B67AD522DD5E2020047C69D /* Mapper */,
+				7B67AD4F2DD5E2000047C69D /* Model */,
+				7B67AD562DD5E2040047C69D /* KeyChain */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		7B67AC872DD5BE260047C69D /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				7B67AC352DD5BB6D0047C69D /* Secrets.swift */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		7B67AC882DD5BE430047C69D /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-				7B67AC342DD5BB6D0047C69D /* Font.swift */,
-			);
-			path = DesignSystem;
-			sourceTree = "<group>";
-		};
-		7B67AC8C2DD5C2070047C69D /* KeyChain */ = {
-			isa = PBXGroup;
-			children = (
-				7B67AC8F2DD5C2560047C69D /* KeychainType.swift */,
-				7B67AC8D2DD5C2390047C69D /* Keychain.swift */,
-			);
-			path = KeyChain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +276,23 @@
 			);
 			fileSystemSynchronizedGroups = (
 				7B67AC6F2DD5BB7A0047C69D /* Resources */,
+				7B67AD352DD5E19F0047C69D /* UseCase */,
+				7B67AD3B2DD5E1F40047C69D /* Interface */,
+				7B67AD422DD5E1F60047C69D /* Entity */,
+				7B67AD492DD5E1FA0047C69D /* API */,
+				7B67AD4C2DD5E1FD0047C69D /* DTO */,
+				7B67AD4F2DD5E2000047C69D /* Model */,
+				7B67AD522DD5E2020047C69D /* Mapper */,
+				7B67AD562DD5E2040047C69D /* KeyChain */,
+				7B67AD5B2DD5E20C0047C69D /* Testing */,
+				7B67AD642DD5E2100047C69D /* View */,
+				7B67AD6C2DD5E2150047C69D /* DesignSystem */,
+				7B67AD6F2DD5E2170047C69D /* Config */,
+				7B67AD722DD5E2190047C69D /* Utility */,
+				7B67AD782DD5E69F0047C69D /* OAuth */,
+				7B67AD792DD5E6B10047C69D /* Logger */,
+				7BF7E5E52DD5FD46005D9483 /* Service */,
+				7BF7E5E62DD5FD4F005D9483 /* API */,
 			);
 			name = NKLCB;
 			packageProductDependencies = (
@@ -438,30 +389,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B67AC4C2DD5BB6D0047C69D /* RecruitResponseDTO.swift in Sources */,
-				7B67AC4D2DD5BB6D0047C69D /* CompanyFilter.swift in Sources */,
-				7B67AC4E2DD5BB6D0047C69D /* RecruitEntity.swift in Sources */,
-				7B67AC4F2DD5BB6D0047C69D /* RecruitFilter.swift in Sources */,
-				7B67AC502DD5BB6D0047C69D /* RecruitType.swift in Sources */,
-				7B67AC512DD5BB6D0047C69D /* NetworkService.swift in Sources */,
-				7B67AC522DD5BB6D0047C69D /* RecruitAPI.swift in Sources */,
-				7B67AC532DD5BB6D0047C69D /* RecruitModel.swift in Sources */,
-				7B67AC542DD5BB6D0047C69D /* API.swift in Sources */,
-				7B67AC552DD5BB6D0047C69D /* RecruitModelType.swift in Sources */,
-				7B67AC562DD5BB6D0047C69D /* RecruitMapper.swift in Sources */,
-				7B67AC8E2DD5C2390047C69D /* Keychain.swift in Sources */,
-				7B67AC572DD5BB6D0047C69D /* DummyData.swift in Sources */,
-				7B67AC582DD5BB6D0047C69D /* RecruitModelStub.swift in Sources */,
-				7B67AC592DD5BB6D0047C69D /* CachedDateFormatter.swift in Sources */,
-				7B67AC5A2DD5BB6D0047C69D /* Font.swift in Sources */,
-				7B67AC5B2DD5BB6D0047C69D /* Secrets.swift in Sources */,
-				7B67AC5C2DD5BB6D0047C69D /* CollectionView.swift in Sources */,
-				7B67AC902DD5C2560047C69D /* KeychainType.swift in Sources */,
-				7B67AC5D2DD5BB6D0047C69D /* ContentView.swift in Sources */,
-				7B67AC5E2DD5BB6D0047C69D /* FilterCapsuleView.swift in Sources */,
-				7B67AC5F2DD5BB6D0047C69D /* PositionFilterBottomSheetView.swift in Sources */,
-				7B67AC602DD5BB6D0047C69D /* RecruitCardView.swift in Sources */,
-				7B67AC612DD5BB6D0047C69D /* WebView.swift in Sources */,
 				7B67AC622DD5BB6D0047C69D /* NKLCBApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,7 +539,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = NKLCB/NKLCBDebug.entitlements;
+				CODE_SIGN_ENTITLEMENTS = NKLCB/Resources/NKLCBDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
