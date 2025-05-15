@@ -1,11 +1,13 @@
 import Foundation
+import Security
 
-public struct Keychain {
-    public init() {}
-
+public final class KeyChain: Sendable {
+    public static let shared = KeyChain()
     private let service: String = Bundle.main.bundleIdentifier ?? ""
+    
+    private init() {}
 
-    public func save(type: KeychainType, value: String) {
+    public func save(type: KeyChainType, value: String) {
         let query: NSDictionary = [
             kSecClass: kSecClassGenericPassword,
             kSecAttrService: service,
@@ -16,7 +18,7 @@ public struct Keychain {
         SecItemAdd(query, nil)
     }
 
-    public func load(type: KeychainType) -> String {
+    public func load(type: KeyChainType) -> String? {
         let query: NSDictionary = [
             kSecClass: kSecClassGenericPassword,
             kSecAttrService: service,
@@ -27,13 +29,13 @@ public struct Keychain {
         var dataTypeRef: AnyObject?
         let status = withUnsafeMutablePointer(to: &dataTypeRef) { SecItemCopyMatching(query, UnsafeMutablePointer($0)) }
         if status == errSecSuccess {
-            guard let data = dataTypeRef as? Data else { return "" }
-            return String(data: data, encoding: .utf8) ?? ""
+            guard let data = dataTypeRef as? Data else { return nil }
+            return String(data: data, encoding: .utf8)
         }
-        return ""
+        return nil
     }
 
-    public func delete(type: KeychainType) {
+    public func delete(type: KeyChainType) {
         let query: NSDictionary = [
             kSecClass: kSecClassGenericPassword,
             kSecAttrService: service,
