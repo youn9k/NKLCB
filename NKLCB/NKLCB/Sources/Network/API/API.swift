@@ -7,4 +7,5 @@ public protocol API {
 
 public enum Method: String {
     case get = "GET"
+    case post = "POST"
 }
