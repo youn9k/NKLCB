@@ -146,6 +146,11 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		7BF7E69C2DD8D54B005D9483 /* Repository */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +255,7 @@
 		7B67AC862DD5BE0F0047C69D /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7BF7E69C2DD8D54B005D9483 /* Repository */,
 				7B67AD492DD5E1FA0047C69D /* API */,
 				7B67AD4C2DD5E1FD0047C69D /* DTO */,
 				7B67AD522DD5E2020047C69D /* Mapper */,
@@ -293,6 +299,7 @@
 				7B67AD792DD5E6B10047C69D /* Logger */,
 				7BF7E5E52DD5FD46005D9483 /* Service */,
 				7BF7E5E62DD5FD4F005D9483 /* API */,
+				7BF7E69C2DD8D54B005D9483 /* Repository */,
 			);
 			name = NKLCB;
 			packageProductDependencies = (
