@@ -71,11 +71,6 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
-		7B67AD422DD5E1F60047C69D /* Entity */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Entity;
-			sourceTree = "<group>";
-		};
 		7B67AD492DD5E1FA0047C69D /* API */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = API;
@@ -228,7 +223,6 @@
 			children = (
 				7B67AD352DD5E19F0047C69D /* UseCase */,
 				7B67AD3B2DD5E1F40047C69D /* Interface */,
-				7B67AD422DD5E1F60047C69D /* Entity */,
 				7B67AD5B2DD5E20C0047C69D /* Testing */,
 			);
 			path = Domain;
@@ -284,7 +278,6 @@
 				7B67AC6F2DD5BB7A0047C69D /* Resources */,
 				7B67AD352DD5E19F0047C69D /* UseCase */,
 				7B67AD3B2DD5E1F40047C69D /* Interface */,
-				7B67AD422DD5E1F60047C69D /* Entity */,
 				7B67AD492DD5E1FA0047C69D /* API */,
 				7B67AD4C2DD5E1FD0047C69D /* DTO */,
 				7B67AD4F2DD5E2000047C69D /* Model */,
