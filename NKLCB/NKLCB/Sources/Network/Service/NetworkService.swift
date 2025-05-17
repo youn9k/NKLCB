@@ -1,7 +1,7 @@
 import Alamofire
 import Foundation
 
-final class NetworkService {
+public final class NetworkService {
     public static let shared = NetworkService()
     private let keyChain = KeyChain.shared
     private let authQueue = DispatchQueue(label: "authQueue")
@@ -43,7 +43,7 @@ final class NetworkService {
         let url = api.baseURL + "/" + api.path
         let httpMethod = HTTPMethod(rawValue: api.method.rawValue)
         
-        let task: DataTask<T> = AF.request(url, method: httpMethod, parameters: api.parameters)
+        let task: DataTask<T> = session.request(url, method: httpMethod, parameters: api.parameters)
             .validate()
             .serializingDecodable(T.self)
         
