@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B5F88132DC25610004BFDC7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7B5F88122DC25610004BFDC7 /* Alamofire */; };
 		7B67AC622DD5BB6D0047C69D /* NKLCBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC3E2DD5BB6D0047C69D /* NKLCBApp.swift */; };
+		7B75C5F52DD9ACE70019E5D8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7B75C5F42DD9ACE70019E5D8 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,6 +20,19 @@
 			remoteInfo = NKLCB;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7B75C5F32DD9ACD50019E5D8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7B5F876E2DC1C8A4004BFDC7 /* NKLCB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NKLCB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +52,8 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				NKLCB_AppStore.mobileprovision,
+				NKLCB_Develop.mobileprovision,
 			);
 			target = 7B5F876D2DC1C8A4004BFDC7 /* NKLCB */;
 		};
@@ -153,7 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B5F88132DC25610004BFDC7 /* Alamofire in Frameworks */,
+				7B75C5F52DD9ACE70019E5D8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +187,7 @@
 			children = (
 				7B67AC412DD5BB6D0047C69D /* NKLCB */,
 				7B5F87A02DC1EF83004BFDC7 /* NKLCBTests */,
+				7B75C5E92DD992720019E5D8 /* Frameworks */,
 				7B5F876F2DC1C8A4004BFDC7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -259,6 +275,13 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		7B75C5E92DD992720019E5D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -269,6 +292,7 @@
 				7B5F876A2DC1C8A4004BFDC7 /* Sources */,
 				7B5F876B2DC1C8A4004BFDC7 /* Frameworks */,
 				7B5F876C2DC1C8A4004BFDC7 /* Resources */,
+				7B75C5F32DD9ACD50019E5D8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,7 +320,7 @@
 			);
 			name = NKLCB;
 			packageProductDependencies = (
-				7B5F88122DC25610004BFDC7 /* Alamofire */,
+				7B75C5F42DD9ACE70019E5D8 /* Alamofire */,
 			);
 			productName = NKLCB;
 			productReference = 7B5F876E2DC1C8A4004BFDC7 /* NKLCB.app */;
@@ -558,6 +582,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_PREPROCESS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,7 +613,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NKLCB/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "네카라쿠배";
+				INFOPLIST_KEY_CFBundleDisplayName = "네카라쿠배-DEBUG";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -596,6 +621,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_PREPROCESS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -693,7 +719,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7B5F88122DC25610004BFDC7 /* Alamofire */ = {
+		7B75C5F42DD9ACE70019E5D8 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7B5F88112DC25610004BFDC7 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
