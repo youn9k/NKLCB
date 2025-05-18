@@ -41,47 +41,40 @@ final class OAuthAuthenticator: Authenticator {
         
         print("🛰 토큰 재발급 시도")
         print("🛰 refresh token: \(credential.refreshToken)")
-        let requestDto = TokenRefreshRequestDTO(refreshToken: credential.refreshToken)
-        let endpoint = LoginEndpoint.tokenRefresh(body: requestDto)
-        let url = endpoint.baseURL.appending(endpoint.path)
+        let body = TokenRefreshRequestDTO(refreshToken: credential.refreshToken)
+        let api = AuthAPI.renewAccessToken(body)
+        
+        let url = api.baseURL + "/" + api.path
+        let httpMethod = HTTPMethod(rawValue: api.method.rawValue)
+        
         print("🛰 URL: \(url)")
         
-        AF.request(
-            url,
-            method: .patch,
-            parameters: requestDto,
-            encoder: JSONParameterEncoder()
-        ).responseAPI(of: TokenRefreshResponseDTO.self) { result in
-            switch result {
-            case .success(let tokenData):
-                let accessToken = tokenData.accessToken
-                let refreshToken = tokenData.refreshToken
-                print("🛰 토큰 재발급 성공")
-                print("🛰 Access Token: \(accessToken)")
-                print("🛰 Refresh Token: \(refreshToken)")
-                
-                PCKeychainManager.shared.save(.accessToken, value: accessToken)
-                PCKeychainManager.shared.save(.refreshToken, value: refreshToken)
-                
-                // 토큰 만료 시간 파싱
-                var expiration = Date(timeIntervalSinceNow: 60 * 60 * 24) // 기본값
-                if let claims = tokenData.accessToken.decodeJWT(),
-                   let exp = claims["exp"] as? TimeInterval {
-                    expiration = Date(timeIntervalSince1970: exp)
+        AF.request(url, method: httpMethod, parameters: api.parameters)
+            .validate()
+            .responseDecodable(of: TokenRefreshResponseDTO.self) { [weak self] response in
+                guard let self else { return }
+                switch response.result {
+                case .success(let data):
+                    let accessToken = data.accessToken
+                    let accessExpriredAt = data.expriredAt
+                    print("🛰 토큰 재발급 성공")
+                    print("🛰 AccessToken: \(accessToken)")
+                    print("🛰 AccessExpriredAt: \(accessExpriredAt)")
+                    
+                    keyChain.save(type: .accessToken, value: accessToken)
+                    keyChain.save(type: .accessExpiredAt, value: String(accessExpriredAt))
+                    
+                    let newCredential = OAuthCredential(
+                        accessToken: accessToken,
+                        refreshToken: keyChain.load(type: .refreshToken) ?? "",
+                        accessExpiredAt: accessExpriredAt.unixTimeToDate
+                    )
+                    completion(.success(newCredential))
+                    
+                case .failure(let error):
+                    print("🛰 토큰 재발급 실패: \(error.localizedDescription)")
+                    completion(.failure(error))
                 }
-                let newCredential = OAuthCredential(
-                    accessToken: accessToken,
-                    refreshToken: refreshToken,
-                    expiration: expiration
-                )
-                completion(.success(newCredential))
-                
-            case .failure(let networkError):
-                print("🛰 토큰 재발급 실패: \(networkError.errorDescription ?? "알 수 없는 오류")")
-                PCKeychainManager.shared.delete(.accessToken)
-                PCKeychainManager.shared.delete(.refreshToken)
-                completion(.failure(networkError))
             }
-        }
     }
 }
