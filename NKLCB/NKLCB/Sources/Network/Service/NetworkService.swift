@@ -14,7 +14,7 @@ public final class NetworkService {
         let refreshToken = keyChain.load(type: .refreshToken) ?? ""
         var expiresIn = Date(timeIntervalSinceNow: 60 * 60 * 24) // default
         
-        if let exp = Double(keyChain.load(type: .accessExpiresIn) ?? "") {
+        if let exp = Double(keyChain.load(type: .accessExpiredAt) ?? "") {
             expiresIn = exp.unixTimeToDate
         }
         
@@ -23,7 +23,7 @@ public final class NetworkService {
         let credential = OAuthCredential(
             accessToken: accessToken,
             refreshToken: refreshToken,
-            expiredAt: expiresIn
+            accessExpiredAt: expiresIn
         )
         
         let interceptor = AuthenticationInterceptor(
@@ -40,7 +40,7 @@ public final class NetworkService {
     }
     
     public func request<T: Decodable>(_ api: API) async -> Result<T, Error> {
-        let url = api.baseURL + "/" + api.path
+        let url = api.baseURL + api.path
         let httpMethod = HTTPMethod(rawValue: api.method.rawValue)
         
         let task: DataTask<T> = session.request(url, method: httpMethod, parameters: api.parameters)
@@ -55,7 +55,7 @@ public final class NetworkService {
     }
     
     public func request<T: Decodable>(_ api: API) async throws -> T {
-        let url = api.baseURL + "/" + api.path
+        let url = api.baseURL + api.path
         let httpMethod = HTTPMethod(rawValue: api.method.rawValue)
         
         let task: DataTask<T> = session.request(url, method: httpMethod, parameters: api.parameters)
@@ -70,7 +70,7 @@ public final class NetworkService {
     }
     
     public func requestWithoutAuth<T: Decodable>(_ api: API) async -> Result<T, Error> {
-        let url = api.baseURL + "/" + api.path
+        let url = api.baseURL + api.path
         let httpMethod = HTTPMethod(rawValue: api.method.rawValue)
         
         let task: DataTask<T> = AF.request(url, method: httpMethod, parameters: api.parameters)
@@ -85,7 +85,7 @@ public final class NetworkService {
     }
     
     public func requestWithoutAuth<T: Decodable>(_ api: API) async throws -> T {
-        let url = api.baseURL + "/" + api.path
+        let url = api.baseURL + api.path
         let httpMethod = HTTPMethod(rawValue: api.method.rawValue)
         
         let task: DataTask<T> = AF.request(url, method: httpMethod, parameters: api.parameters)
@@ -99,13 +99,28 @@ public final class NetworkService {
         }
     }
     
+    public func requestWithoutAuth(_ api: API) async throws {
+        let url = api.baseURL + api.path
+        let httpMethod = HTTPMethod(rawValue: api.method.rawValue)
+        
+        let task = AF.request(url, method: httpMethod, parameters: api.parameters)
+            .validate()
+            .serializingData()
+        
+        let response = await task.response
+        switch response.result {
+        case .success: return
+        case .failure(let error): throw error
+        }
+    }
+    
     public func updateCredentials() {
         authQueue.async { [weak self] in
             guard let self else { return }
             
             let accessToken = keyChain.load(type: .accessToken) ?? ""
             let refreshToken = keyChain.load(type: .refreshToken) ?? ""
-            var expiredAt = Date(timeIntervalSinceNow: 60 * 60 * 24) // default
+            var expiredAt = Date(timeIntervalSinceNow: 60 * 5) // default: 5 min
             
             if let exp = Double(keyChain.load(type: .accessExpiredAt) ?? "") {
                 expiredAt = exp.unixTimeToDate
@@ -116,7 +131,7 @@ public final class NetworkService {
             let credential = OAuthCredential(
                 accessToken: accessToken,
                 refreshToken: refreshToken,
-                expiredAt: expiredAt
+                accessExpiredAt: expiredAt
             )
             
             let interceptor = AuthenticationInterceptor(
