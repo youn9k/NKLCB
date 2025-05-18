@@ -1,7 +1,7 @@
 import Foundation
 
 enum AuthAPI: API {
-    case loginWithOAuth(_ body: SocialLoginRequsetDTO)
+    case loginWithOAuth(_ body: SocialLoginRequestDTO)
     case renewAccessToken(_ body: TokenRefreshRequestDTO)
     case logout(_ body: LogoutRequestDTO)
 

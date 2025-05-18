@@ -56,7 +56,7 @@ final class OAuthAuthenticator: Authenticator {
                 switch response.result {
                 case .success(let data):
                     let accessToken = data.accessToken
-                    let accessExpriredAt = data.expriredAt
+                    let accessExpriredAt = data.expiredAt
                     print("🛰 토큰 재발급 성공")
                     print("🛰 AccessToken: \(accessToken)")
                     print("🛰 AccessExpriredAt: \(accessExpriredAt)")

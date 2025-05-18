@@ -1,6 +1,6 @@
 import Foundation
 
-public struct SocialLoginRequsetDTO: Encodable {
+public struct SocialLoginRequestDTO: Encodable {
     public let providerType: ProviderType
     public let token: String
     

@@ -11,7 +11,7 @@ public final class AuthRepositoryImpl: AuthRepository {
     }
     
     public func socialLogin(providerType: ProviderType, token: String) async throws -> SocialLoginResponseDTO {
-        let body = SocialLoginRequsetDTO(providerType: providerType, token: token)
+        let body = SocialLoginRequestDTO(providerType: providerType, token: token)
         let api = AuthAPI.loginWithOAuth(body)
         
         let response: SocialLoginResponseDTO = try await networkService.requestWithoutAuth(api)
