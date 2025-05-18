@@ -29,7 +29,7 @@ public final class AuthRepositoryImpl: AuthRepository {
         let body = LogoutRequestDTO(refreshToken: refreshToken)
         let api = AuthAPI.logout(body)
         
-        let response: EmptyResponseDTO = try await networkService.requestWithoutAuth(api)
+        try await networkService.requestWithoutAuth(api)
     }
 }
 
