@@ -1,0 +1,2 @@
+public struct EmptyResponseDTO: Decodable {
+}

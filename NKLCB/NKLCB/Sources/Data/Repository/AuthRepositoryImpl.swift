@@ -1,22 +1,35 @@
 public final class AuthRepositoryImpl: AuthRepository {
     private let networkService: NetworkService
+    private let keyChain: KeyChain
     
-    public init(networkService: NetworkService) {
+    public init(
+        networkService: NetworkService,
+        keyChain: KeyChain
+    ) {
         self.networkService = networkService
+        self.keyChain = keyChain
     }
     
     public func socialLogin(providerType: ProviderType, token: String) async throws -> SocialLoginResponseDTO {
         let body = SocialLoginRequsetDTO(providerType: providerType, token: token)
         let api = AuthAPI.loginWithOAuth(body)
         
-        let responseDTO: SocialLoginResponseDTO = try await networkService.request(api)
+        let response: SocialLoginResponseDTO = try await networkService.requestWithoutAuth(api)
         
-        KeyChain.shared.save(type: .accessToken, value: responseDTO.accessToken)
-        KeyChain.shared.save(type: .refreshToken, value: responseDTO.refreshToken)
-        KeyChain.shared.save(type: .accessExpiresIn, value: String(responseDTO.expiresIn))
+        keyChain.save(type: .accessToken, value: response.accessToken)
+        keyChain.save(type: .refreshToken, value: response.refreshToken)
+        keyChain.save(type: .accessExpiredAt, value: String(response.expiredAt))
         
         networkService.updateCredentials()
-        return responseDTO
+        return response
+    }
+    
+    public func logout() async throws {
+        let refreshToken = keyChain.load(type: .refreshToken) ?? ""
+        let body = LogoutRequestDTO(refreshToken: refreshToken)
+        let api = AuthAPI.logout(body)
+        
+        let response: EmptyResponseDTO = try await networkService.requestWithoutAuth(api)
     }
 }
 
