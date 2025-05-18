@@ -36,6 +36,7 @@ final class OAuthAuthenticator: Authenticator {
             print("🛰 Refresh Token 없음")
             keyChain.delete(type: .accessToken)
             keyChain.delete(type: .refreshToken)
+            completion(.failure(AFError.invalidURL(url: "refreshToken is empty"))) // FIXME: 커스텀 에러 필요
             return
         }
         
