@@ -105,10 +105,10 @@ public final class NetworkService {
             
             let accessToken = keyChain.load(type: .accessToken) ?? ""
             let refreshToken = keyChain.load(type: .refreshToken) ?? ""
-            var expiresIn = Date(timeIntervalSinceNow: 60 * 60 * 24) // default
+            var expiredAt = Date(timeIntervalSinceNow: 60 * 60 * 24) // default
             
-            if let exp = Double(keyChain.load(type: .accessExpiresIn) ?? "") {
-                expiresIn = exp.unixTimeToDate
+            if let exp = Double(keyChain.load(type: .accessExpiredAt) ?? "") {
+                expiredAt = exp.unixTimeToDate
             }
             
             // Create credential and session
@@ -116,7 +116,7 @@ public final class NetworkService {
             let credential = OAuthCredential(
                 accessToken: accessToken,
                 refreshToken: refreshToken,
-                expiredAt: expiresIn
+                expiredAt: expiredAt
             )
             
             let interceptor = AuthenticationInterceptor(
