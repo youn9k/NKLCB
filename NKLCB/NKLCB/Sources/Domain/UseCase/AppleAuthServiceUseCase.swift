@@ -17,7 +17,8 @@ public final class AppleAuthServiceUseCaseImpl: NSObject, AppleAuthServiceUseCas
                 userInfo: [NSLocalizedDescriptionKey: "이미 요청이 진행 중입니다."])
         }
         
-        return try await withCheckedThrowingContinuation { continuation in
+        return try await withCheckedThrowingContinuation { [weak self] continuation in
+            guard let self else { return }
             self.continuation = continuation
             
             let request = ASAuthorizationAppleIDProvider().createRequest()
@@ -32,27 +33,27 @@ public final class AppleAuthServiceUseCaseImpl: NSObject, AppleAuthServiceUseCas
 }
 
 extension AppleAuthServiceUseCaseImpl: ASAuthorizationControllerDelegate {
-  public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-    guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
-          let authorizationCodeData = appleIDCredential.authorizationCode,
-          let authorizationCode = String(data: authorizationCodeData, encoding: .utf8)
-    else {
-        continuation?.resume(throwing: NSError(
-            domain: appleAuthDomain,
-            code: -1,
-            userInfo: [NSLocalizedDescriptionKey: "Invalid Credential"])
+    public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
+              let authorizationCodeData = appleIDCredential.authorizationCode,
+              let authorizationCode = String(data: authorizationCodeData, encoding: .utf8)
+        else {
+            continuation?.resume(throwing: NSError(
+                domain: appleAuthDomain,
+                code: -1,
+                userInfo: [NSLocalizedDescriptionKey: "Invalid Credential"])
+            )
+            return
+        }
+        
+        let result = AppleAuthResultEntity(
+            authorizationCode: authorizationCode,
+            email: appleIDCredential.email
         )
-      return
+        continuation?.resume(returning: result)
     }
     
-    let result = AppleAuthResultEntity(
-      authorizationCode: authorizationCode,
-      email: appleIDCredential.email
-    )
-    continuation?.resume(returning: result)
-  }
-  
-  public func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-    continuation?.resume(throwing: error)
-  }
+    public func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        continuation?.resume(throwing: error)
+    }
 }
