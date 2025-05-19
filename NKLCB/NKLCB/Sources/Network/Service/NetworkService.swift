@@ -40,10 +40,9 @@ public final class NetworkService {
     }
     
     public func request<T: Decodable>(_ api: API) async -> Result<T, Error> {
-        let url = api.baseURL + api.path
-        let httpMethod = HTTPMethod(rawValue: api.method.rawValue)
+        guard let urlRequest = try? api.asURLRequest() else { return .failure(URLError(.badURL)) }
         
-        let task: DataTask<T> = session.request(url, method: httpMethod, parameters: api.parameters)
+        let task: DataTask<T> = session.request(urlRequest)
             .validate()
             .serializingDecodable(T.self)
         
@@ -55,10 +54,9 @@ public final class NetworkService {
     }
     
     public func request<T: Decodable>(_ api: API) async throws -> T {
-        let url = api.baseURL + api.path
-        let httpMethod = HTTPMethod(rawValue: api.method.rawValue)
+        let urlRequest = try api.asURLRequest()
         
-        let task: DataTask<T> = session.request(url, method: httpMethod, parameters: api.parameters)
+        let task: DataTask<T> = session.request(urlRequest)
             .validate()
             .serializingDecodable(T.self)
         
@@ -70,10 +68,9 @@ public final class NetworkService {
     }
     
     public func requestWithoutAuth<T: Decodable>(_ api: API) async -> Result<T, Error> {
-        let url = api.baseURL + api.path
-        let httpMethod = HTTPMethod(rawValue: api.method.rawValue)
-        
-        let task: DataTask<T> = AF.request(url, method: httpMethod, parameters: api.parameters)
+        guard let urlRequest = try? api.asURLRequest() else { return .failure(URLError(.badURL)) }
+
+        let task: DataTask<T> = AF.request(urlRequest)
             .validate()
             .serializingDecodable(T.self)
         
@@ -85,10 +82,9 @@ public final class NetworkService {
     }
     
     public func requestWithoutAuth<T: Decodable>(_ api: API) async throws -> T {
-        let url = api.baseURL + api.path
-        let httpMethod = HTTPMethod(rawValue: api.method.rawValue)
+        let urlRequest = try api.asURLRequest()
         
-        let task: DataTask<T> = AF.request(url, method: httpMethod, parameters: api.parameters)
+        let task: DataTask<T> = AF.request(urlRequest)
             .validate()
             .serializingDecodable(T.self)
         
@@ -100,10 +96,9 @@ public final class NetworkService {
     }
     
     public func requestWithoutAuth(_ api: API) async throws {
-        let url = api.baseURL + api.path
-        let httpMethod = HTTPMethod(rawValue: api.method.rawValue)
+        let urlRequest = try api.asURLRequest()
         
-        let task = AF.request(url, method: httpMethod, parameters: api.parameters)
+        let task = AF.request(urlRequest)
             .validate()
             .serializingData()
         

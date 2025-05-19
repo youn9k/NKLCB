@@ -7,10 +7,6 @@ enum AuthAPI: API {
 
     private static let domain = "/auth"
     
-    var baseURL: String {
-        config(key: "BASE_URL") ?? ""
-    }
-
     var method: Method {
         switch self {
         case .loginWithOAuth: .post
@@ -26,8 +22,15 @@ enum AuthAPI: API {
         case .logout: "\(AuthAPI.domain)/logout"
         }
     }
-
-    var parameters: [String : String]? {
-       return nil
+    
+    var body: Encodable? {
+        switch self {
+        case .loginWithOAuth(let body):
+            return body
+        case .renewAccessToken(let body):
+            return body
+        case .logout(let body):
+            return body
+        }
     }
 }

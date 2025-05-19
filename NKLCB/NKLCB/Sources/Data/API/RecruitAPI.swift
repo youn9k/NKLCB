@@ -17,12 +17,20 @@ enum RecruitAPI: API {
         case .fetchRecruits: config(key: "RECRUIT_LIST") ?? ""
         }
     }
-
+    
+    var headers: [String : String]? {
+        return nil
+    }
+    
     var parameters: [String : String]? {
         switch self {
         case .fetchRecruits(let company):
             let value = company.queryParameter
             return ["company": value]
         }
+    }
+    
+    var body: Encodable? {
+        return nil
     }
 }
