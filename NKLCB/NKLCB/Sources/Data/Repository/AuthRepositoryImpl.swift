@@ -30,6 +30,12 @@ public final class AuthRepositoryImpl: AuthRepository {
         let api = AuthAPI.logout(body)
         
         try await networkService.requestWithoutAuth(api)
+        
+        keyChain.delete(type: .accessToken)
+        keyChain.delete(type: .refreshToken)
+        keyChain.delete(type: .accessExpiredAt)
+
+        networkService.updateCredentials()
     }
 }
 
