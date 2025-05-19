@@ -57,18 +57,18 @@ final class OAuthAuthenticator: Authenticator {
                 switch response.result {
                 case .success(let data):
                     let accessToken = data.accessToken
-                    let accessExpriredAt = data.expiredAt
+                    let accessExpiredAt = data.expiredAt
                     print("🛰 토큰 재발급 성공")
                     print("🛰 AccessToken: \(accessToken)")
-                    print("🛰 AccessExpriredAt: \(accessExpriredAt)")
+                    print("🛰 AccessExpiredAt: \(accessExpiredAt)")
                     
                     keyChain.save(type: .accessToken, value: accessToken)
-                    keyChain.save(type: .accessExpiredAt, value: String(accessExpriredAt))
+                    keyChain.save(type: .accessExpiredAt, value: String(accessExpiredAt))
                     
                     let newCredential = OAuthCredential(
                         accessToken: accessToken,
                         refreshToken: keyChain.load(type: .refreshToken) ?? "",
-                        accessExpiredAt: accessExpriredAt.unixTimeToDate
+                        accessExpiredAt: accessExpiredAt.unixTimeToDate
                     )
                     completion(.success(newCredential))
                     
