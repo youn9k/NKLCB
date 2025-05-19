@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B5F88132DC25610004BFDC7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7B5F88122DC25610004BFDC7 /* Alamofire */; };
+		7B67AC622DD5BB6D0047C69D /* NKLCBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67AC3E2DD5BB6D0047C69D /* NKLCBApp.swift */; };
+		7B75C5F52DD9ACE70019E5D8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7B75C5F42DD9ACE70019E5D8 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,19 +21,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7B75C5F32DD9ACD50019E5D8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7B5F876E2DC1C8A4004BFDC7 /* NKLCB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NKLCB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5F879F2DC1EF83004BFDC7 /* NKLCBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NKLCBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B67AC3E2DD5BB6D0047C69D /* NKLCBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKLCBApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		7B5F87952DC1E9D8004BFDC7 /* Exceptions for "NKLCB" folder in "NKLCB" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Resources/Info.plist,
-			);
-			target = 7B5F876D2DC1C8A4004BFDC7 /* NKLCB */;
-		};
 		7B5F880C2DC210CA004BFDC7 /* Exceptions for "NKLCBTests" folder in "NKLCBTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -40,23 +48,117 @@
 			);
 			target = 7B5F879E2DC1EF83004BFDC7 /* NKLCBTests */;
 		};
+		7B67AC7A2DD5BB7A0047C69D /* Exceptions for "Resources" folder in "NKLCB" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				NKLCB_AppStore.mobileprovision,
+				NKLCB_Develop.mobileprovision,
+			);
+			target = 7B5F876D2DC1C8A4004BFDC7 /* NKLCB */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		7B5F87702DC1C8A4004BFDC7 /* NKLCB */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				7B5F87952DC1E9D8004BFDC7 /* Exceptions for "NKLCB" folder in "NKLCB" target */,
-			);
-			path = NKLCB;
-			sourceTree = "<group>";
-		};
 		7B5F87A02DC1EF83004BFDC7 /* NKLCBTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				7B5F880C2DC210CA004BFDC7 /* Exceptions for "NKLCBTests" folder in "NKLCBTests" target */,
 			);
 			path = NKLCBTests;
+			sourceTree = "<group>";
+		};
+		7B67AC6F2DD5BB7A0047C69D /* Resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				7B67AC7A2DD5BB7A0047C69D /* Exceptions for "Resources" folder in "NKLCB" target */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7B67AD352DD5E19F0047C69D /* UseCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		7B67AD3B2DD5E1F40047C69D /* Interface */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		7B67AD492DD5E1FA0047C69D /* API */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = API;
+			sourceTree = "<group>";
+		};
+		7B67AD4C2DD5E1FD0047C69D /* DTO */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		7B67AD4F2DD5E2000047C69D /* Model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B67AD522DD5E2020047C69D /* Mapper */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		7B67AD562DD5E2040047C69D /* KeyChain */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
+		7B67AD5B2DD5E20C0047C69D /* Testing */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		7B67AD642DD5E2100047C69D /* View */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B67AD6C2DD5E2150047C69D /* DesignSystem */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		7B67AD6F2DD5E2170047C69D /* Config */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Config;
+			sourceTree = "<group>";
+		};
+		7B67AD722DD5E2190047C69D /* Utility */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7B67AD782DD5E69F0047C69D /* OAuth */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		7B67AD792DD5E6B10047C69D /* Logger */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		7BF7E5E52DD5FD46005D9483 /* Service */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7BF7E5E62DD5FD4F005D9483 /* API */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = API;
+			sourceTree = "<group>";
+		};
+		7BF7E69C2DD8D54B005D9483 /* Repository */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -66,7 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B5F88132DC25610004BFDC7 /* Alamofire in Frameworks */,
+				7B75C5F52DD9ACE70019E5D8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,8 +185,9 @@
 		7B5F87652DC1C8A4004BFDC7 = {
 			isa = PBXGroup;
 			children = (
-				7B5F87702DC1C8A4004BFDC7 /* NKLCB */,
+				7B67AC412DD5BB6D0047C69D /* NKLCB */,
 				7B5F87A02DC1EF83004BFDC7 /* NKLCBTests */,
+				7B75C5E92DD992720019E5D8 /* Frameworks */,
 				7B5F876F2DC1C8A4004BFDC7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +201,87 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7B67AC3F2DD5BB6D0047C69D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7B67AC3E2DD5BB6D0047C69D /* NKLCBApp.swift */,
+				7B67AC7D2DD5BBA50047C69D /* Network */,
+				7B67AC862DD5BE0F0047C69D /* Data */,
+				7B67AC7F2DD5BBB20047C69D /* Domain */,
+				7B67AC802DD5BBBA0047C69D /* Presentation */,
+				7B67AC812DD5BC850047C69D /* Core */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		7B67AC412DD5BB6D0047C69D /* NKLCB */ = {
+			isa = PBXGroup;
+			children = (
+				7B67AC6F2DD5BB7A0047C69D /* Resources */,
+				7B67AC3F2DD5BB6D0047C69D /* Sources */,
+			);
+			path = NKLCB;
+			sourceTree = "<group>";
+		};
+		7B67AC7D2DD5BBA50047C69D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7BF7E5E62DD5FD4F005D9483 /* API */,
+				7BF7E5E52DD5FD46005D9483 /* Service */,
+				7B67AD792DD5E6B10047C69D /* Logger */,
+				7B67AD782DD5E69F0047C69D /* OAuth */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7B67AC7F2DD5BBB20047C69D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7B67AD352DD5E19F0047C69D /* UseCase */,
+				7B67AD3B2DD5E1F40047C69D /* Interface */,
+				7B67AD5B2DD5E20C0047C69D /* Testing */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7B67AC802DD5BBBA0047C69D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7B67AD642DD5E2100047C69D /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		7B67AC812DD5BC850047C69D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7B67AD6C2DD5E2150047C69D /* DesignSystem */,
+				7B67AD6F2DD5E2170047C69D /* Config */,
+				7B67AD722DD5E2190047C69D /* Utility */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7B67AC862DD5BE0F0047C69D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7BF7E69C2DD8D54B005D9483 /* Repository */,
+				7B67AD492DD5E1FA0047C69D /* API */,
+				7B67AD4C2DD5E1FD0047C69D /* DTO */,
+				7B67AD522DD5E2020047C69D /* Mapper */,
+				7B67AD4F2DD5E2000047C69D /* Model */,
+				7B67AD562DD5E2040047C69D /* KeyChain */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7B75C5E92DD992720019E5D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -108,17 +292,35 @@
 				7B5F876A2DC1C8A4004BFDC7 /* Sources */,
 				7B5F876B2DC1C8A4004BFDC7 /* Frameworks */,
 				7B5F876C2DC1C8A4004BFDC7 /* Resources */,
+				7B75C5F32DD9ACD50019E5D8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				7B5F87702DC1C8A4004BFDC7 /* NKLCB */,
+				7B67AC6F2DD5BB7A0047C69D /* Resources */,
+				7B67AD352DD5E19F0047C69D /* UseCase */,
+				7B67AD3B2DD5E1F40047C69D /* Interface */,
+				7B67AD492DD5E1FA0047C69D /* API */,
+				7B67AD4C2DD5E1FD0047C69D /* DTO */,
+				7B67AD4F2DD5E2000047C69D /* Model */,
+				7B67AD522DD5E2020047C69D /* Mapper */,
+				7B67AD562DD5E2040047C69D /* KeyChain */,
+				7B67AD5B2DD5E20C0047C69D /* Testing */,
+				7B67AD642DD5E2100047C69D /* View */,
+				7B67AD6C2DD5E2150047C69D /* DesignSystem */,
+				7B67AD6F2DD5E2170047C69D /* Config */,
+				7B67AD722DD5E2190047C69D /* Utility */,
+				7B67AD782DD5E69F0047C69D /* OAuth */,
+				7B67AD792DD5E6B10047C69D /* Logger */,
+				7BF7E5E52DD5FD46005D9483 /* Service */,
+				7BF7E5E62DD5FD4F005D9483 /* API */,
+				7BF7E69C2DD8D54B005D9483 /* Repository */,
 			);
 			name = NKLCB;
 			packageProductDependencies = (
-				7B5F88122DC25610004BFDC7 /* Alamofire */,
+				7B75C5F42DD9ACE70019E5D8 /* Alamofire */,
 			);
 			productName = NKLCB;
 			productReference = 7B5F876E2DC1C8A4004BFDC7 /* NKLCB.app */;
@@ -211,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B67AC622DD5BB6D0047C69D /* NKLCBApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,8 +437,8 @@
 /* Begin XCBuildConfiguration section */
 		7B5F877A2DC1C8A5004BFDC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 7B5F87702DC1C8A4004BFDC7 /* NKLCB */;
-			baseConfigurationReferenceRelativePath = Resources/Secrets.xcconfig;
+			baseConfigurationReferenceAnchor = 7B67AC6F2DD5BB7A0047C69D /* Resources */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -299,8 +502,8 @@
 		};
 		7B5F877B2DC1C8A5004BFDC7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 7B5F87702DC1C8A4004BFDC7 /* NKLCB */;
-			baseConfigurationReferenceRelativePath = Resources/Secrets.xcconfig;
+			baseConfigurationReferenceAnchor = 7B67AC6F2DD5BB7A0047C69D /* Resources */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -360,6 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NKLCB/Resources/NKLCBDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -378,6 +582,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_PREPROCESS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +613,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NKLCB/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "네카라쿠배";
+				INFOPLIST_KEY_CFBundleDisplayName = "네카라쿠배-DEBUG";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -416,6 +621,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_PREPROCESS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -513,7 +719,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7B5F88122DC25610004BFDC7 /* Alamofire */ = {
+		7B75C5F42DD9ACE70019E5D8 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7B5F88112DC25610004BFDC7 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
