@@ -2,7 +2,7 @@ enum RecruitAPI: API {
     case fetchRecruits(company: CompanyFilter)
 
     var baseURL: String {
-        config(key: "BASE_URL") ?? ""
+        RECRUIT_BASE_URL() ?? ""
     }
 
     var method: Method {
@@ -14,7 +14,7 @@ enum RecruitAPI: API {
     
     var path: String {
         switch self {
-        case .fetchRecruits: config(key: "RECRUIT_LIST") ?? ""
+        case .fetchRecruits: "/list"
         }
     }
     

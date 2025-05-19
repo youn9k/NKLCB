@@ -6,7 +6,7 @@ struct ContentView: View {
 
     // MARK: Model
     #if DEBUG
-    @StateObject private var recruitModel = RecruitModelStub()
+    @StateObject private var recruitModel = RecruitModel()
     #else
     @StateObject private var recruitModel = RecruitModel()
     #endif

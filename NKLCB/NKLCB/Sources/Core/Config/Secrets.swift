@@ -11,6 +11,6 @@ public func BASE_URL() -> String? {
     return config(key: "BASE_URL")
 }
 
-public func RECRUIT_LIST() -> String? {
-    return config(key: "RECRUIT_LIST")
+public func RECRUIT_BASE_URL() -> String? {
+    return config(key: "RECRUIT_BASE_URL")
 }

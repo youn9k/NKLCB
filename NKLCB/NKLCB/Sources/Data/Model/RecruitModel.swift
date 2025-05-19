@@ -12,7 +12,7 @@ final class RecruitModel: RecruitModelType, ObservableObject {
     
     func fetchRecruits(by company: CompanyFilter) async {
         isLoading = true; defer { isLoading = false }
-        let result: Result<[RecruitResponseDTO], Error> = await NetworkService.shared.request(RecruitAPI.fetchRecruits(company: company))
+        let result: Result<[RecruitResponseDTO], Error> = await NetworkService.shared.requestWithoutAuth (RecruitAPI.fetchRecruits(company: company))
         switch result {
         case .success(let data):
             let fetched = RecruitMapper.map(dto: data)
