@@ -5,7 +5,7 @@ public protocol SocialLoginUseCase {
 public final class SocialLoginUseCaseImpl: SocialLoginUseCase {
     private let repository: AuthRepository
     
-    init(repository: AuthRepository) {
+    public init(repository: AuthRepository) {
         self.repository = repository
     }
     
