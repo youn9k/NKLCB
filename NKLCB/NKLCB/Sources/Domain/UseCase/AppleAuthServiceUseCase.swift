@@ -33,11 +33,12 @@ public final class AppleAuthServiceUseCaseImpl: NSObject, AppleAuthServiceUseCas
 }
 
 extension AppleAuthServiceUseCaseImpl: ASAuthorizationControllerDelegate {
-    public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        guard let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential,
-              let authorizationCodeData = appleIDCredential.authorizationCode,
-              let authorizationCode = String(data: authorizationCodeData, encoding: .utf8)
-        else {
+    public func authorizationController(
+        controller: ASAuthorizationController,
+        didCompleteWithAuthorization authorization: ASAuthorization
+    ) {
+        guard let credential = authorization.credential as? ASAuthorizationAppleIDCredential,
+           let rawData = credential.identityToken else {
             continuation?.resume(throwing: NSError(
                 domain: appleAuthDomain,
                 code: -1,
@@ -45,10 +46,10 @@ extension AppleAuthServiceUseCaseImpl: ASAuthorizationControllerDelegate {
             )
             return
         }
-        
+        let token = String(decoding: rawData, as: UTF8.self)
         let result = AppleAuthResultEntity(
-            authorizationCode: authorizationCode,
-            email: appleIDCredential.email
+            token: token,
+            email: credential.email
         )
         continuation?.resume(returning: result)
     }

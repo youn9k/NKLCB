@@ -8,6 +8,11 @@ public struct SocialLoginRequestDTO: Encodable {
         self.providerType = providerType
         self.token = token
     }
+    
+    private enum CodingKeys: String, CodingKey {
+        case providerType = "provider"
+        case token
+    }
 }
 
 public enum ProviderType: String, Encodable {
