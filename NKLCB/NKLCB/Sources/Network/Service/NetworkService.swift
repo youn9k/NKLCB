@@ -6,7 +6,8 @@ public final class NetworkService {
     private let keyChain = KeyChain.shared
     private let authQueue = DispatchQueue(label: "authQueue")
     private let networkLogger: NetworkLogger
-    private var session: Session
+    private var authSession: Session
+    private var defaultSession: Session
     
     private init() {
         // load token
@@ -33,8 +34,12 @@ public final class NetworkService {
         
         self.networkLogger = NetworkLogger()
         
-        self.session = Session(
+        self.authSession = Session(
             interceptor: interceptor,
+            eventMonitors: [networkLogger]
+        )
+        
+        self.defaultSession = Session(
             eventMonitors: [networkLogger]
         )
     }
@@ -42,7 +47,7 @@ public final class NetworkService {
     public func request<T: Decodable>(_ api: API) async -> Result<T, Error> {
         guard let urlRequest = try? api.asURLRequest() else { return .failure(URLError(.badURL)) }
         
-        let task: DataTask<T> = session.request(urlRequest)
+        let task: DataTask<T> = authSession.request(urlRequest)
             .validate()
             .serializingDecodable(T.self)
         
@@ -56,7 +61,7 @@ public final class NetworkService {
     public func request<T: Decodable>(_ api: API) async throws -> T {
         let urlRequest = try api.asURLRequest()
         
-        let task: DataTask<T> = session.request(urlRequest)
+        let task: DataTask<T> = authSession.request(urlRequest)
             .validate()
             .serializingDecodable(T.self)
         
@@ -70,7 +75,7 @@ public final class NetworkService {
     public func requestWithoutAuth<T: Decodable>(_ api: API) async -> Result<T, Error> {
         guard let urlRequest = try? api.asURLRequest() else { return .failure(URLError(.badURL)) }
 
-        let task: DataTask<T> = AF.request(urlRequest)
+        let task: DataTask<T> = defaultSession.request(urlRequest)
             .validate()
             .serializingDecodable(T.self)
         
@@ -84,7 +89,7 @@ public final class NetworkService {
     public func requestWithoutAuth<T: Decodable>(_ api: API) async throws -> T {
         let urlRequest = try api.asURLRequest()
         
-        let task: DataTask<T> = AF.request(urlRequest)
+        let task: DataTask<T> = defaultSession.request(urlRequest)
             .validate()
             .serializingDecodable(T.self)
         
@@ -98,7 +103,7 @@ public final class NetworkService {
     public func requestWithoutAuth(_ api: API) async throws {
         let urlRequest = try api.asURLRequest()
         
-        let task = AF.request(urlRequest)
+        let task = defaultSession.request(urlRequest)
             .validate()
             .serializingData()
         
@@ -136,7 +141,7 @@ public final class NetworkService {
             print("🛰 Session 업데이트 - Access Token: \(accessToken)")
             print("🛰 Session 업데이트 - Refresh Token: \(refreshToken)")
             
-            self.session = Session(
+            self.authSession = Session(
                 interceptor: interceptor,
                 eventMonitors: [self.networkLogger]
             )
